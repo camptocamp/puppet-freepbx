@@ -9,7 +9,6 @@ class freepbx::install {
     'php5',
     'php5-mysql',
     'php5-gd',
-    'git',
     'php-db']:
   ensure => $freepbx::package_ensure,
   }
