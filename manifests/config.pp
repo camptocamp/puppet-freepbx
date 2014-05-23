@@ -83,11 +83,6 @@ class freepbx::config {
     creates => '/usr/local/sbin/amportal',
   }
 
-  exec { '/usr/local/sbin/amportal a ma installall':
-    creates => "${freepbx::vhost_docroot}/admin/modules/weakpasswords/i18n/weakpasswords.pot"
-  }
-
-  # exec 'amportal a ma installall' needs _cache dir but doesn't create it...
   file { "${freepbx::vhost_docroot}/admin/modules/_cache/":
     ensure => directory,
   }
