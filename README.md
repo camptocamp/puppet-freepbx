@@ -20,6 +20,7 @@ About
 =====
 
 Work inspired by [Debian install page on Freepbx wiki](http://wiki.freepbx.org/display/HTGS/Installing+FreePBX+on+Debian+Wheezy)
+Does not install every existing modules by not executing final amportal a ma installall
 
 Parameters
 ==========
