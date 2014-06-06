@@ -51,8 +51,8 @@ class freepbx::config {
     ensure   => present
   }
 
-  $mysql_user     = $::mysql::server::base::mysql_user
-  $mysql_password = $::mysql::server::base::mysql_password
+  $mysql_user     = $::mysql::server::user
+  $mysql_password = $::mysql::server::password
 
   # We could translate these SQL scripts into puppet receipt, but then this
   # module would be obsolete every new version of freepbx's SQL scripts
