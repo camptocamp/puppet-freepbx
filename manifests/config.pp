@@ -59,14 +59,14 @@ class freepbx::config {
   exec { 'mysql newinstall.sql':
     command     => "mysql --user=${mysql_user} --database=asterisk < ${freepbx::asterisk_git_repo_dir}/SQL/newinstall.sql",
     cwd         => $freepbx::asterisk_git_repo_dir,
-    environment => "MYSQL_PWD=${mysql_password}",
+    environment => "MYSQL_PWD='${mysql_password}'",
     unless      => "mysql --user=${mysql_user} asterisk -e \"SELECT * FROM dahdichandids LIMIT 1;\"",
   }
 
   exec { 'mysql cdr_nmysql_table.sql':
     command     => "mysql --user=${mysql_user} --database=asteriskcdrdb  < ${freepbx::asterisk_git_repo_dir}/SQL/cdr_mysql_table.sql",
     cwd         => $freepbx::asterisk_git_repo_dir,
-    environment => "MYSQL_PWD=${mysql_password}",
+    environment => "MYSQL_PWD='${mysql_password}'",
     unless      => "mysql --user=${mysql_user} asteriskcdrdb -e \"SELECT * FROM cdr LIMIT 1;\"",
   }
 
