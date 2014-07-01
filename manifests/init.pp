@@ -62,12 +62,12 @@
 # Copyright 2014 Simon Séhier, Camptocamp.com
 #
 class freepbx (
+  $asterisk_db_pass,
   $version               = $freepbx::params::version,
   $package_ensure        = $freepbx::params::package_ensure,
   $asterisk_user         = $freepbx::params::asterisk_user,
   $asterisk_group        = $freepbx::params::asterisk_group,
   $asterisk_db_user      = $freepbx::params::asterisk_db_user,
-  $asterisk_db_pass      = $freepbx::params::asterisk_db_pass,
   $asterisk_git_repo_dir = $freepbx::params::asterisk_git_repo_dir,
   $vhost_name            = $freepbx::params::vhost_name,
   $vhost_docroot         = $freepbx::params::vhost_docroot,
