@@ -1,0 +1,3 @@
+fixtures:
+  symlinks:
+    "freepbx": "#{source_dir}"
