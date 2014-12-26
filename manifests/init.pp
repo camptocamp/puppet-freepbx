@@ -81,5 +81,5 @@ class freepbx (
   class { 'freepbx::install': } ->
   class { 'freepbx::config': } ~>
   class { 'freepbx::service': } ->
-  Class ['freepbx']
+  Class['freepbx']
 }
