@@ -1,0 +1,43 @@
+{
+  "name": "camptocamp-freepbx",
+  "version": "1.0.0",
+  "author": "Camptocamp",
+  "summary": "Puppet Freepbx module",
+  "license": "Apache 2.0",
+  "source": "https://github.com/camptocamp/puppet-freepbx",
+  "project_page": "https://github.com/camptocamp/puppet-freepbx",
+  "issues_url": "https://github.com/camptocamp/puppet-freepbx/issues",
+  "dependencies": [
+    {
+      "name": "camptocamp/mysql"
+    },
+    {
+      "name": "puppetlabs/apache"
+    },
+    {
+      "name": "puppetlabs/vcsrepo"
+    },
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">=3.2.0 <5.0.0"
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": "3.x"
+    }
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "7",
+        "8"
+      ]
+    }
+  ],
+  "puppet_version": [
+    "3.7"
+  ]
+}
