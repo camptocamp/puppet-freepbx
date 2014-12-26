@@ -1,25 +1,27 @@
 require 'spec_helper'
+
 describe 'freepbx' do
-  context 'when on Debian' do
-    let (:facts) { {
-      :osfamily        => 'Debian',
-      :operatingsystem => 'Debian',
-      :lsbdistcodename => 'wheezy',
-    } }
 
-    context 'when no parameters are specified' do
-      let (:params) { { } }
-      it 'should fail' do
-        expect { should compile }.to raise_error(Puppet::Error, /Must pass/)
+  on_supported_os.each do |os, facts|
+    context "on #{os}" do
+      let(:facts) do
+        facts
       end
-    end
 
-    context 'when specifying password' do
-      let (:params) { {
-        :asterisk_db_pass => 'foobarbaz',
-      } }
+      context 'when no parameters are specified' do
+        let (:params) { { } }
+        it 'should fail' do
+          expect { should compile }.to raise_error(/Must pass/)
+        end
+      end
 
-      it { should compile.with_all_deps }
+      context 'when specifying password' do
+        let (:params) { {
+          :asterisk_db_pass => 'foobarbaz',
+        } }
+
+        it { should compile.with_all_deps }
+      end
     end
   end
 end
