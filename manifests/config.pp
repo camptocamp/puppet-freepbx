@@ -15,6 +15,7 @@ class freepbx::config {
     ensure  => directory,
   }
 
+  include apache
   apache::vhost { $freepbx::vhost_name:
     port    => 80,
     docroot => $freepbx::vhost_docroot,
