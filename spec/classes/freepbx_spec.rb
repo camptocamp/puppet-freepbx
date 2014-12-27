@@ -5,7 +5,9 @@ describe 'freepbx' do
   on_supported_os.each do |os, facts|
     context "on #{os}" do
       let(:facts) do
-        facts
+        facts.merge({
+          :concat_basedir => '/foo',
+        })
       end
 
       context 'when no parameters are specified' do
