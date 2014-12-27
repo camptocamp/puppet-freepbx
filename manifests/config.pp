@@ -61,6 +61,7 @@ class freepbx::config {
     cwd         => $freepbx::asterisk_git_repo_dir,
     environment => "MYSQL_PWD=${mysql_password}",
     unless      => "mysql --user=${mysql_user} asterisk -e \"SELECT * FROM dahdichandids LIMIT 1;\"",
+    path        => $::path,
   }
 
   exec { 'mysql cdr_nmysql_table.sql':
@@ -68,6 +69,7 @@ class freepbx::config {
     cwd         => $freepbx::asterisk_git_repo_dir,
     environment => "MYSQL_PWD=${mysql_password}",
     unless      => "mysql --user=${mysql_user} asteriskcdrdb -e \"SELECT * FROM cdr LIMIT 1;\"",
+    path        => $::path,
   }
 
 
@@ -75,12 +77,14 @@ class freepbx::config {
   ## start asterisk
   exec { "${freepbx::asterisk_git_repo_dir}/start_asterisk start":
     cwd    => $freepbx::asterisk_git_repo_dir,
-    unless => 'pgrep asterisk'
+    unless => 'pgrep asterisk',
+    path   => $::path,
   }
 
   exec { "${freepbx::asterisk_git_repo_dir}/install_amp --username=${freepbx::asterisk_db_user} --password=${freepbx::asterisk_db_pass} --webroot ${freepbx::vhost_docroot}":
     cwd     => $freepbx::asterisk_git_repo_dir,
     creates => '/usr/local/sbin/amportal',
+    path    => $::path,
   }
 
   file { "${freepbx::vhost_docroot}/admin/modules/_cache/":
