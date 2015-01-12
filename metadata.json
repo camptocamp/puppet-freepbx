@@ -9,13 +9,16 @@
   "issues_url": "https://github.com/camptocamp/puppet-freepbx/issues",
   "dependencies": [
     {
-      "name": "camptocamp/mysql"
+      "name": "camptocamp/mysql",
+      "version_requirement": ">=0.0.0 <1.0.0"
     },
     {
-      "name": "puppetlabs/apache"
+      "name": "puppetlabs/apache",
+      "version_requirement": ">=1.0.0 <2.0.0"
     },
     {
-      "name": "puppetlabs/vcsrepo"
+      "name": "puppetlabs/vcsrepo",
+      "version_requirement": ">=1.0.0 <2.0.0"
     },
     {
       "name": "puppetlabs/stdlib",
