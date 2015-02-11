@@ -15,7 +15,7 @@ class freepbx::config {
     ensure  => directory,
   }
 
-  include apache
+  include ::apache
   apache::vhost { $freepbx::vhost_name:
     port    => 80,
     docroot => $freepbx::vhost_docroot,
@@ -28,7 +28,7 @@ class freepbx::config {
   }
 
   # mysql:
-  include mysql::server
+  include ::mysql::server
 
   mysql::rights{'Set rights for asterisk database':
     ensure   => present,
@@ -45,11 +45,11 @@ class freepbx::config {
   }
 
   mysql::database{'asterisk':
-    ensure   => present
+    ensure   => present,
   }
 
   mysql::database{'asteriskcdrdb':
-    ensure   => present
+    ensure   => present,
   }
 
   $mysql_user     = $::mysql::server::user
