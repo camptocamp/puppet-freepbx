@@ -30,26 +30,16 @@ class freepbx::config {
   # mysql:
   include ::mysql::server
 
-  mysql::rights{'Set rights for asterisk database':
+  mysql::db { 'asterisk':
     ensure   => present,
-    database => 'asterisk',
     user     => $freepbx::asterisk_db_user,
     password => $freepbx::asterisk_db_pass,
   }
 
-  mysql::rights{'Set rights for asteriskcdrdb database':
+  mysql::db { 'asteriskcdrdb':
     ensure   => present,
-    database => 'asteriskcdrdb',
     user     => $freepbx::asterisk_db_user,
     password => $freepbx::asterisk_db_pass,
-  }
-
-  mysql_database{'asterisk':
-    ensure   => present,
-  }
-
-  mysql_database{'asteriskcdrdb':
-    ensure   => present,
   }
 
   $mysql_user     = $::mysql::server::user
