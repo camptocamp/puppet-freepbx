@@ -44,11 +44,11 @@ class freepbx::config {
     password => $freepbx::asterisk_db_pass,
   }
 
-  mysql::database{'asterisk':
+  mysql_database{'asterisk':
     ensure   => present,
   }
 
-  mysql::database{'asteriskcdrdb':
+  mysql_database{'asteriskcdrdb':
     ensure   => present,
   }
 
