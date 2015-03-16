@@ -13,7 +13,7 @@ Requires
 ========
 
 - This module uses exec for mysql initialisation. an Exec path should be set. 
-- Requires [camptocamp puppet-mysql module](https://github.com/camptocamp/puppet-mysql)
+- Requires [puppetlabs-mysql module](https://github.com/puppetlabs/puppetlabs-mysql)
 
 
 About
