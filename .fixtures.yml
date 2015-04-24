@@ -1,9 +1,9 @@
 fixtures:
-  repositories:
-    concat: https://github.com/puppetlabs/puppetlabs-concat
-    stdlib: https://github.com/puppetlabs/puppetlabs-stdlib
-    vcsrepo: https://github.com/puppetlabs/puppetlabs-vcsrepo
-    apache: https://github.com/puppetlabs/puppetlabs-apache
-    mysql: https://github.com/camptocamp/puppet-mysql
+  forge_modules:
+    apache: 'puppetlabs-apache'
+    concat: 'puppetlabs-concat'
+    mysql: 'puppetlabs-mysql'
+    stdlib: 'puppetlabs-stdlib'
+    vcsrepo: 'puppetlabs-vcsrepo'
   symlinks:
     freepbx: "#{source_dir}"
