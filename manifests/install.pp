@@ -4,7 +4,7 @@
 #
 class freepbx::install {
 
-  package { ['asterisk','asterisk-moh-opsound-gsm',
+  package { [
     'libapache2-mod-php5',
     'php5',
     'php5-mysql',
