@@ -13,7 +13,7 @@ describe 'freepbx' do
       context 'when no parameters are specified' do
         let (:params) { { } }
         it 'should fail' do
-          expect { should compile }.to raise_error(/Must pass/)
+          expect { should compile }.to raise_error(/asterisk_db_pass/)
         end
       end
 
