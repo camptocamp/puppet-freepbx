@@ -78,8 +78,8 @@ class freepbx (
   validate_string($asterisk_db_pass)
   validate_absolute_path($vhost_docroot)
 
-  class { '::freepbx::install': } ->
-  class { '::freepbx::config': } ~>
-  class { '::freepbx::service': } ->
-  Class['freepbx']
+  class { '::freepbx::install': }
+  -> class { '::freepbx::config': }
+  ~> class { '::freepbx::service': }
+  -> Class['freepbx']
 }
